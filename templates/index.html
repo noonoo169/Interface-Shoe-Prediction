@@ -13,7 +13,11 @@
     <div>
         <form method="post" action="/predict">
             <label for="brand">Brand:</label>
-            <input type="text" id="brand" name="brand" value="{{ form_data['brand'] if form_data else '' }}" required >
+            <select id="branch" name="branch" class="combobox">
+                {% for branch_label in branch_labels %}
+                    <option value="{{ branch_label }}" {% if branch_selected == branch_label %} selected {% endif %}>{{ branch_label }}</option>
+                {% endfor %}
+            </select>
 
             <label for="size">Size:</label>
             <input type="text" id="size" name="size" value="{{ form_data['size'] if form_data else '' }}" required>
@@ -22,14 +26,14 @@
             <input type="text" id="retail_price" name="retail_price" value="{{ form_data['retail_price'] if form_data else '' }}" required>
 
             <label for="category">Category:</label>
-            <input type="text" id="category" name="category" value="{{ form_data['category'] if form_data else '' }}" required>
-
-            <label for="style">Style:</label>
-            <input type="text" id="style" name="style" value="{{ form_data['style'] if form_data else '' }}" required>
-
+            <select id="category" name="category" class="combobox">
+                {% for category_label in category_labels %}
+                    <option value="{{ category_label }}" {% if category_selected == category_label %} selected {% endif %}>{{ category_label }}</option>
+                {% endfor %}
+            </select>
             <div class="btns">
-                <button type="submit">
-                    Button
+                <button type="submit" class="btn-predict">
+                    Predict
                 </button>
                 <a href="/" class="btn-reset">Reset</a>
             </div>

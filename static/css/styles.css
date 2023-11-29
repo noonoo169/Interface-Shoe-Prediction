@@ -26,10 +26,17 @@ label {
 }
 
 
+.combobox {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
 
 input[type="text"],
 input[type="number"],
-button[type="submit"],
+.btn-predict,
 .btn-reset {
     width: 95%;
     padding: 10px;
@@ -38,8 +45,7 @@ button[type="submit"],
     border: 1px solid #ccc;
 }
 
-button[type="submit"],
-.btn-reset {
+.btn-predict {
     text-align: center;
     margin: 10px;
     background-color: #4caf50;
@@ -50,9 +56,23 @@ button[type="submit"],
     transition: background-color 0.3s ease;
 }
 
-button[type="submit"]:hover,
+.btn-reset {
+    text-align: center;
+    margin: 10px;
+    background-color: rgb(234, 18, 18);
+    color: white;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-predict:hover{
+    background-color: #177d1c;
+}
+
 .btn-reset:hover {
-    background-color: #45a049;
+    background-color: rgb(130, 23, 23);
 }
 
 .btns {
